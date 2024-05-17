@@ -3,24 +3,24 @@ const cors = require('cors')
 
 // Auth setUp
 const {
-    createaGoal,
-    getaGoal,
-    getAllGoal,
-    deleteaGoal
-} = require('../controllers/goalController')
+    createaTask,
+    getaTask,
+    getAllTask,
+    deleteaTask
+} = require('../controllers/taskController')
 
 const router = express.Router();
 
 // create goal
-router.post('/creategoal', createaGoal)
+router.post('/createatask', createaTask)
 
 // get single goal
-router.get('/getgoal/:id', getaGoal)
+router.get('/getatask/:id', getaTask)
 
 // get all goals
-router.get('/getallgoal', getAllGoal)
+router.get('/getalltask', getAllTask)
 
 // delete a goal
-router.delete('/deletegoal/:id', deleteaGoal)
+router.delete('/deleteatask/:id', deleteaTask)
 
 module.exports = router;

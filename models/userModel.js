@@ -18,6 +18,10 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: true,
+    },
+    goals_array: {
+        type: Array,
+        unique: true
     }
 }, { timestamps: true })
 
@@ -75,4 +79,4 @@ userSchema.statics.login = async function(email, password){
 
     return user
 }
-module.exports = mongoose.model('UserSchema', userSchema);
+module.exports = mongoose.model('TraqUserSchema', userSchema);

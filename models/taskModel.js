@@ -4,17 +4,18 @@ const Schema = mongoose.Schema;
 const validator = require('validator');
 
 // User Schema Defination
-const goalSchema = new Schema({
-    goalID: {
+const taskSchema = new Schema({
+    taskID: {
         type: String,
         required: true,
         unique: true
     },
-    task_array: {
-        type: Array,
-        // required: true,
-        unique: true
+    task_Quantity: {
+        type: Number
+    },
+    frequency_Array: {
+        type: Array
     }
 }, { timestamps: true })
 
-module.exports = mongoose.model('GoalSchema', goalSchema);
+module.exports = mongoose.model('TaskSchema', taskSchema);

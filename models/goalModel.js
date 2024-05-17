@@ -8,12 +8,11 @@ const goalSchema = new Schema({
     goalID: {
         type: String,
         required: true,
-        unique: true
     },
     task_array: {
         type: Array,
         // required: true,
-        unique: true
+        // unique: true
     }
 }, { timestamps: true })
 

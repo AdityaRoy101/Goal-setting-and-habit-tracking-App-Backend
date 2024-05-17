@@ -1,14 +1,14 @@
-const GoalSchema = require('../models/goalModel')
+const TaskSchema = require('../models/taskModel')
 // const jwt = require('jsonwebtoken')
 
 
 // create a Goal
-const createaGoal = async(req, res) => {
+const createaTask = async(req, res) => {
     
-    const { goalID, task_array } = req.body
+    const { taskID, task_Quantity, frequency_Array } = req.body
 
     try {
-        const user = await GoalSchema.create({goalID, task_array})
+        const user = await TaskSchema.create({taskID, task_Quantity, frequency_Array})
 
         res.status(200).json(user)
         // res.status(200).json({
@@ -22,12 +22,12 @@ const createaGoal = async(req, res) => {
 
 
 // get a Goal
-const getaGoal = async(req, res) => {
+const getaTask = async(req, res) => {
     
     const {goalID, task_array} = req.body
 
     try {
-        const user = await GoalSchema.create(goalID, task_array)
+        const user = await TaskSchema.create(goalID, task_array)
 
         res.status(201).json({user})
     } catch (error) {
@@ -36,12 +36,12 @@ const getaGoal = async(req, res) => {
 }
 
 // get all Goals
-const getAllGoal = async(req, res) => {
+const getAllTask = async(req, res) => {
     
     const {goalID, task_array} = req.body
 
     try {
-        const user = await GoalSchema.create(goalID, task_array)
+        const user = await TaskSchema.create(goalID, task_array)
 
         res.status(201).json({user})
     } catch (error) {
@@ -50,12 +50,12 @@ const getAllGoal = async(req, res) => {
 }
 
 // delete a Goal
-const deleteaGoal = async(req, res) => {
+const deleteaTask = async(req, res) => {
     
     const {goalID, task_array} = req.body
 
     try {
-        const user = await GoalSchema.create(goalID, task_array)
+        const user = await TaskSchema.create(goalID, task_array)
 
         res.status(201).json({user})
         // res.status(200).json({
@@ -67,8 +67,8 @@ const deleteaGoal = async(req, res) => {
 }
 
 module.exports = {
-    createaGoal,
-    getaGoal,
-    getAllGoal,
-    deleteaGoal
+    createaTask,
+    getaTask,
+    getAllTask,
+    deleteaTask
 }

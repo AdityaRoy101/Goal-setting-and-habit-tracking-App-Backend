@@ -6,13 +6,17 @@ const {
     createaGoal,
     getaGoal,
     getAllGoal,
-    deleteaGoal
+    deleteaGoal,
+    setgoalarray
 } = require('../controllers/goalController')
 
 const router = express.Router();
 
 // create goal
 router.post('/creategoal', createaGoal)
+
+// set goal to user goal array
+router.post('/setgoalarray', setgoalarray)
 
 // get single goal
 router.get('/getgoal/:id', getaGoal)

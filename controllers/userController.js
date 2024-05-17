@@ -29,7 +29,8 @@ const signupUser = async(req, res) => {
     const { name, email, password } = req.body;
 
     try {
-        const user = await UserSchema.signup(name, email, password)
+        var goals_array = ["HelloWorld"]
+        const user = await UserSchema.signup(name, email, password, goals_array)
 
         // Creating a JWT Token
         const token = createToken(user._id)

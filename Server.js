@@ -6,6 +6,7 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const userAuthRoutes = require('./routes/user')
 const goalRoutes = require('./routes/goal')
+const taskRoutes = require('./routes/task')
 
 // express app
 const app = express()
@@ -28,7 +29,7 @@ app.use((req, res, next) => {
 // routes
 app.use('/api/user', userAuthRoutes)
 app.use('/api/user/goal', goalRoutes)
-// app.use('/api/user/goal/task', userAuthRoutes)
+app.use('/api/user/goal/task', taskRoutes)
 
 // connect to db
 mongoose.connect(process.env.MONGO_URI)
