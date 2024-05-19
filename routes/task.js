@@ -1,26 +1,33 @@
 const express = require('express');
 const cors = require('cors')
 
-// Auth setUp
+// Task setUp
 const {
     createaTask,
-    getaTask,
-    getAllTask,
-    deleteaTask
+    findalltasks,
+    deleteatask,
+    taskcheck,
+    settaskgoalarray
 } = require('../controllers/taskController')
 
 const router = express.Router();
 
-// create goal
+// create a task
 router.post('/createatask', createaTask)
 
-// get single goal
-router.get('/getatask/:id', getaTask)
+// set goal to user goal array
+router.post('/settaskgoalarray', settaskgoalarray)
 
-// get all goals
-router.get('/getalltask', getAllTask)
+// Find all tasks given a userID and goalID
+router.get('/findalltasks/:id', findalltasks)
 
-// delete a goal
-router.delete('/deleteatask/:id', deleteaTask)
+// delete a task 
+router.delete('/deleteatask/:id', deleteatask)
+
+// check or uncheck a task 
+router.patch('/taskcheck', taskcheck)
+
+// update a task 
+// router.patch('/updateatask', updateatask)
 
 module.exports = router;

@@ -5,7 +5,19 @@ const validator = require('validator');
 
 // User Schema Defination
 const goalSchema = new Schema({
+    userId: {
+        type: String,
+        required: true,
+    },
     goalID: {
+        type: String,
+        required: true,
+    },
+    goalStartDate: {
+        type: String,
+        required: true,
+    },
+    goalEndDate: {
         type: String,
         required: true,
     },

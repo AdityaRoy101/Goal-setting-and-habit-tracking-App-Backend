@@ -1,13 +1,12 @@
 const express = require('express');
 const cors = require('cors')
 
-// Auth setUp
+// goal setUp
 const {
     createaGoal,
-    getaGoal,
-    getAllGoal,
     deleteaGoal,
-    setgoalarray
+    setgoalarray,
+    allusergoals
 } = require('../controllers/goalController')
 
 const router = express.Router();
@@ -18,13 +17,13 @@ router.post('/creategoal', createaGoal)
 // set goal to user goal array
 router.post('/setgoalarray', setgoalarray)
 
-// get single goal
-router.get('/getgoal/:id', getaGoal)
+// set all user goals all at a time
+router.get('/allusergoals/:id', allusergoals)
 
-// get all goals
-router.get('/getallgoal', getAllGoal)
+// update a goal 
+// router.patch('/allusergoals/:id', updateaGoal)
 
-// delete a goal
-router.delete('/deletegoal/:id', deleteaGoal)
+// detete a goal
+router.delete('/deleteaGoal/:id', deleteaGoal)
 
 module.exports = router;

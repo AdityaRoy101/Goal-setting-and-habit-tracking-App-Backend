@@ -5,7 +5,8 @@ const cors = require('cors')
 const {
     loginUser,
     signupUser,
-    JwtVerify
+    JwtVerify,
+    signout
 } = require('../controllers/userController')
 
 const router = express.Router();
@@ -16,5 +17,6 @@ router.post('/login', loginUser)
 // signup route
 router.post('/signup', signupUser)
 router.get('/profile', JwtVerify)
+router.post('/signout', signout)
 
 module.exports = router;

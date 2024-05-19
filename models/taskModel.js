@@ -5,16 +5,30 @@ const validator = require('validator');
 
 // User Schema Defination
 const taskSchema = new Schema({
-    taskID: {
+    userID: {
         type: String,
         required: true,
-        unique: true
+        // unique: true
+    },
+    goalID: {
+        type: String,
+        required: true,
+        // unique: true
+    },
+    task_name: {
+        type: String
     },
     task_Quantity: {
         type: Number
     },
     frequency_Array: {
         type: Array
+    },
+    reminder: {
+        type: Boolean
+    },
+    checked: {
+        type: Boolean
     }
 }, { timestamps: true })
 
